@@ -1,5 +1,7 @@
 <%= form_for(city) do |f| %>
   <% if city.errors.any? %>
+  <hl><%= @city. name %></hl>
+  <div><%= image_tag @city.picture.url(:medium) %></div>
     <div id="error_explanation">
       <h2><%= pluralize(city.errors.count, "error") %> prohibited this city from being saved:</h2>
 
@@ -12,6 +14,7 @@
   <% end %>
 
 <p>Name: <%= f.text_field :name %></p>
+<p>Picture: <%= f.file_field :picture %>
   <div class="actions">
     <%= f.submit %>
   </div>
